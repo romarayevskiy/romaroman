@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homework #5</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!--<table class="chess-board container">
+    <tbody>
+    <tr>
+        <th></th>
+        <th>a</th>
+        <th>b</th>
+        <th>c</th>
+        <th>d</th>
+        <th>e</th>
+        <th>f</th>
+        <th>g</th>
+        <th>h</th>
+    </tr>
+    <tr>
+        <th>8</th>
+        <td class="cells white"></td>
+        <td class="cells black"></td>
+        <td class="cells white"></td>
+        <td class="cells black"></td>
+        <td class="cells white"></td>
+        <td class="cells black"></td>
+        <td class="cells white"></td>
+        <td class="cells black"></td>
+    </tr>
+    <tr>
+        <th>7</th>
+        <td class="cells black"></td>
+        <td class="cells white"></td>
+        <td class="cells black"></td>
+        <td class="cells white"></td>
+        <td class="cells black"></td>
+        <td class="cells white"></td>
+        <td class="cells black"></td>
+        <td class="cells white"></td>
+    </tr>
+    <tr>
+        <th>6</th>
+        <td class="cells white"></td>
+        <td class="cells black"></td>
+        <td class="cells white"></td>
+        <td class="cells black"></td>
+        <td class="cells white"></td>
+        <td class="cells black"></td>
+        <td class="cells white"></td>
+        <td class="cells black"></td>
+    </tr>
+    <tr>
+        <th>5</th>
+        <td class="cells black"></td>
+        <td class="cells white"></td>
+        <td class="cells black"></td>
+        <td class="cells white"></td>
+        <td class="cells black"></td>
+        <td class="cells white"></td>
+        <td class="cells black"></td>
+        <td class="cells white"></td>
+    </tr>
+    <tr>
+        <th>4</th>
+        <td class="cells white"></td>
+        <td class="cells black"></td>
+        <td class="cells white"></td>
+        <td class="cells black"></td>
+        <td class="cells white"></td>
+        <td class="cells black"></td>
+        <td class="cells white"></td>
+        <td class="cells black"></td>
+    </tr>
+    <tr>
+        <th>3</th>
+        <td class="cells black"></td>
+        <td class="cells white"></td>
+        <td class="cells black"></td>
+        <td class="cells white"></td>
+        <td class="cells black"></td>
+        <td class="cells white"></td>
+        <td class="cells black"></td>
+        <td class="cells white"></td>
+    </tr>
+    <tr>
+        <th>2</th>
+        <td class="cells white"></td>
+        <td class="cells black"></td>
+        <td class="cells white"></td>
+        <td class="cells black"></td>
+        <td class="cells white"></td>
+        <td class="cells black"></td>
+        <td class="cells white"></td>
+        <td class="cells black"></td>
+    </tr>
+    <tr>
+        <th>1</th>
+        <td class="cells black"></td>
+        <td class="cells white"></td>
+        <td class="cells black"></td>
+        <td class="cells white"></td>
+        <td class="cells black"></td>
+        <td class="cells white"></td>
+        <td class="cells black"></td>
+        <td class="cells white"></td>
+    </tr>
+    </tbody>
+</table>-->
+<div id="board"></div>
+<script>
+    var $board = document.getElementById('board');
+    $board.classList.add('chess-board');
+    var $table = document.createElement('table');
+    $table.classList.add('chess-board');
+    for (var i = 0; i < 9; i++) {
+        var $row = document.createElement('tr');
+
+        for (var j = 0; j < 9; j++) {
+            var $cell = document.createElement('td');
+            $cell.classList.add('cells');
+
+            if ((i + j) % 2 !== 0 && i != 0 && j != 0) {
+                $cell.classList.add('black')
+            } else if (i == 0 || j == 0) {
+                $cell.classList.add('th')
+            } else {
+                $cell.classList.add('white')
+            }
+            if (j == 0 && i > 0) {
+                $cell.textContent = i + ' ';
+            }
+            var cellTh = ['a', 'b', 'c', 'd', 'e', 'f', 'j', 'h'];
+            if (i == 0 && j > 0) {
+                $cell.textContent = cellTh[j - 1];
+            }
+            $row.appendChild($cell);
+        }
+
+        $table.appendChild($row);
+    }
+
+    $board.appendChild($table)
+</script>
+
+</body>
+</html>
