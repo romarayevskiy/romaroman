@@ -1,0 +1,11 @@
+- создать топик kafka
+kafka-topics --create --topic my_topic --bootstrap-server localhost:9092
+
+- посмотреть список топиков kafka 
+kafka-topics --list --bootstrap-server kafka:19092
+
+- удалить топики kafka 
+kafka-topics --delete --topic my_topic --bootstrap-server localhost:9092
+
+посмотреть сообщения в топике kafka сначала
+kafka-console-consumer --bootstrap-server localhost:9092 --topic my_topic --from-beginning
